@@ -1,0 +1,70 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand" routerLink="/dashboard">
+      <img
+        src="http://via.placeholder.com/50"
+        alt="Logo"
+        width="30"
+        height="30"
+        class="d-inline-block align-text-top"
+      />
+      YourBrand
+    </a>
+    <!-- Toggle button for mobile view -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarSupportedContent"
+    >
+      <span class="nav-toggler-icon"></span>
+    </button>
+
+    <!-- Navbar Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nab-item">
+          <a
+            class="nav-link active text-dark"
+            area-current="page"
+            routerLink="/dashboard"
+            >Home</a
+          >
+        </li>
+        <li class="nab-item">
+          <a class="nav-link active text-dark" routerLink="/employee"
+            >Employee</a
+          >
+        </li>
+        <li class="nab-item">
+          <a class="nav-link active text-dark" routerLink="/leave-request"
+            >Leave Request</a
+          >
+        </li>
+        <li class="nab-item">
+          <a class="nav-link active text-dark" routerLink="/earned-leave"
+            >Earned Leave</a
+          >
+        </li>
+      </ul>
+    </div>
+    <!-- right-aligned section: UserName and Logg off Button -->
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item d-flex align-items-center">
+        <span class="navbar-text me-2 text-dark"
+          >Welcome, {{ loggedUserData.emailId }}</span
+        >
+        <button
+          class="btn btn-warning btn-sm"
+          type="button"
+          (click)="onLoggoff()"
+        >
+          Logout
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>
+<router-outlet />
